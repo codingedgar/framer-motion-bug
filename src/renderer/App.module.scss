@@ -1,0 +1,57 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+body {
+  position: relative;
+  color: white;
+  height: 100vh;
+  background: linear-gradient(200.96deg,
+      #fedc2a -29.09%,
+      #dd5789 51.77%,
+      #7a2c9e 129.35%);
+  font-family: sans-serif;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+:global(#root) {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &>div:first-child {
+    flex: 1 1;
+  }
+
+  &>div:last-child {
+    flex: 0 0 50px;
+    display: flex;
+  }
+
+  .popper {
+    background-color: blue;
+    overflow-y: scroll;
+  }
+
+  .motion {
+    // overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    will-change: transform, opacity;
+
+    ul {
+      // overflow-y: scroll;
+      background-color: red;
+    }
+  }
+}

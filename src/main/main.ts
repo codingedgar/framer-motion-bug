@@ -70,7 +70,7 @@ const createWindow = async () => {
   };
 
   mainWindow = new BrowserWindow({
-    show: false,
+    show: false, // </-- also causes unexpected behavior
     width: 1024,
     height: 728,
     icon: getAssetPath('icon.png'),
@@ -78,6 +78,7 @@ const createWindow = async () => {
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
+      webSecurity: false, // </-- causes bug with animation
     },
   });
 
